@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Image Quantizer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+  </head>
+  <body>
+    <main class="container">
+      <h1>Image Quantizer</h1>
+      <article>
+        <div>
+          <h2>Input image</h2>
+          <input name="image" id="image" type="file" />
+        </div>
+        <div>
+          <h2>Color palette</h2>
+          <input name="palette" id="palette-bw" type="radio" value="bw" />
+          <label for="palette-bw">Black and white (2 colors)</label>
+          <br>
+          <input name="palette" id="palette-grayscale" type="radio" value="grayscale" />
+          <label for="palette-grayscale">Gray scale (9 colors)</label>
+          <br>
+          <input name="palette" id="palette-wplace" type="radio" value="wplace" checked />
+          <label for="palette-wplace">Wplace (64 colors)</label>
+        </div>
+        <br>
+        <button onclick="quantize()">Quantize!</button>
+      </article>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+        <div>
+          <h2>Input preview</h2>
+          <canvas id="preview" style="max-width: 100%; min-width: 100%; image-rendering: pixelated;"></canvas>
+        </div>
+        <div>
+          <h2>Output preview</h2>
+          <canvas id="quantized-preview" style="max-width: 100%; min-width: 100%; image-rendering: pixelated;"></canvas>
+        </div>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

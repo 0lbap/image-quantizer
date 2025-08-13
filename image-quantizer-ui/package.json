@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "image-quantizer-lib": "link:../image-quantizer-lib/pkg"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "12",
+    "webpack": "5",
+    "webpack-cli": "5",
+    "webpack-dev-server": "5"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "serve": "webpack serve --config webpack.config.js --open"
+  }
+}
